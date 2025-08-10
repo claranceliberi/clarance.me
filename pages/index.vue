@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { experiences, books } from '@/data/index';
+import { experiences } from '@/data/index';
+import type { CurrentBookResponse } from '@/types';
 
   const age = computed(() => {
       const birthDate = new Date(2003, 0, 10)
@@ -12,8 +13,11 @@ import { experiences, books } from '@/data/index';
       return age
   })
 
+  // Fetch current book data from API
+  const { data: currentBookData, pending: bookLoading, error: bookError } = await useFetch<CurrentBookResponse>('/api/current-book')
+  
   const currentBook = computed(() => {
-      return books.find(book => book.status == 'READING')
+      return currentBookData.value?.book || null
   })
 
 </script>
