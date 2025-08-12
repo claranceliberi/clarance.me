@@ -9,6 +9,9 @@ const icons = {
     bike: 'i-tabler-bike',
     swimming: 'i-tabler-swimming',
     barbell: 'i-tabler-barbell',
+    mail: 'i-tabler-mail',
+    github: 'i-tabler-brand-github',
+    x: 'i-tabler-brand-x',
 }
 
 type IconProps = {

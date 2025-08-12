@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { experiences, books } from '@/data/index';
+import { experiences } from '@/data/index';
 
   const age = computed(() => {
       const birthDate = new Date(2003, 0, 10)
@@ -10,10 +10,6 @@ import { experiences, books } from '@/data/index';
           age--
       }
       return age
-  })
-
-  const currentBook = computed(() => {
-      return books.find(book => book.status == 'READING')
   })
 
 </script>
@@ -86,17 +82,42 @@ import { experiences, books } from '@/data/index';
                                 </li>
                             </ul>
                         </div>
-                        <div v-if="currentBook" class="card bg-grey-grey10">
-                            <AtomsIconButton icon="book" />
+                        <div class="card bg-grey-grey10">
+                            <AtomsIconButton icon="mail" />
 
-                            <h2 class="card__title">Currently Reading</h2>
+                            <h2 class="card__title">Let's Connect</h2>
 
-                            <p class="text-zinc-500 font-light ">{{ currentBook.title }}</p>
+                            <p class="pb-4 text-zinc-500 font-light">Ready to collaborate or just want to say hello?</p>
 
-                            <h5 class="pb-3 text-zinc-500 font-medium ">By {{ currentBook.author }}</h5>
-
-                            <NuxtImg :src="currentBook.cover" :alt="`${currentBook.title} book cover`" class="m-auto object-cover rounded-md border" :style="{width:'180px',height:'204px'}" />
-
+                            <div class="space-y-3">
+                                <a 
+                                    href="mailto:liberintwari@gmail.com" 
+                                    class="flex items-center space-x-3 p-3 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                >
+                                    <AtomsIconButton icon="mail" />
+                                    <span class="text-zinc-600 font-medium">liberintwari@gmail.com</span>
+                                </a>
+                                
+                                <a 
+                                    href="https://github.com/claranceliberi" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="flex items-center space-x-3 p-3 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                >
+                                    <AtomsIconButton icon="github" />
+                                    <span class="text-zinc-600 font-medium">GitHub</span>
+                                </a>
+                                
+                                <a 
+                                    href="https://x.com/claranceliberi" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="flex items-center space-x-3 p-3 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                >
+                                    <AtomsIconButton icon="x" />
+                                    <span class="text-zinc-600 font-medium">X (Twitter)</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
