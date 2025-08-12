@@ -56,7 +56,7 @@ import { experiences, books } from '@/data/index';
                             <p class="text-zinc-500 font-light xl:text-lg">
                                 I fix things that piss me off. Usually that's slow software, broken infrastructure, or problems everyone says "can't be solved."
 Africa-based engineering teams are stuck choosing between expensive, unreliable national cloud providers (who promise 98% SLA - the lowest in the world - then don't even meet it) or dealing with terrible latency to US servers. People have just accepted this is how it is.
-I'm building <a href="https://cloud.strettch.com"></a strettch cloud, to fix it.
+I'm building <a href="https://cloud.strettch.com">strettch cloud</a>, to fix it.
                             </p>
                         </div>
                         <div
