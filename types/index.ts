@@ -22,3 +22,9 @@ export interface Book {
     cover: string
     status: 'READING' | 'READ'
 }
+
+export interface CurrentBookResponse {
+    book: Book | null
+    source: 'environment' | 'static'
+    lastUpdated?: string
+}
