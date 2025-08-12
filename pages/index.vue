@@ -53,7 +53,7 @@ import { experiences, books } from '@/data/index';
                         <div
                             class="col-span-11 md:col-span-5 row-start-6  md:row-start-2 bg-white bg-custom-gradient card"
                         >
-                            <p class="text-zinc-500 font-light xl:text-md">
+                            <p class="text-zinc-500 font-light">
                                 I fix things that piss me off. Usually that's slow software, broken infrastructure, or problems everyone says "can't be solved."
                                 <br />
 Africa-based engineering teams are stuck choosing between expensive, unreliable national cloud providers (who promise 98% SLA - the lowest in the world - then don't even meet it) or dealing with terrible latency to US servers. People have just accepted this is how it is.
