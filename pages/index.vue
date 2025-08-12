@@ -1,17 +1,16 @@
 <script lang="ts" setup>
-import { experiences } from '@/data/index';
+import { experiences } from '@/data/index'
 
-  const age = computed(() => {
-      const birthDate = new Date(2003, 0, 10)
-      const today = new Date()
-      let age = today.getFullYear() - birthDate.getFullYear()
-      const monthDifference = today.getMonth() - birthDate.getMonth()
-      if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
-          age--
-      }
-      return age
-  })
-
+const age = computed(() => {
+    const birthDate = new Date(2003, 0, 10)
+    const today = new Date()
+    let age = today.getFullYear() - birthDate.getFullYear()
+    const monthDifference = today.getMonth() - birthDate.getMonth()
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--
+    }
+    return age
+})
 </script>
 
 <template>
@@ -21,7 +20,7 @@ import { experiences } from '@/data/index';
             <div class="min-h-[100%] w-56 rectangle absolute right z-0"></div>
 
             <div class="flex justify-center pb-14">
-                <div class="z-10 w-full max-w-[90%] md:max-w-[75%] ">
+                <div class="z-10 w-full max-w-[90%] md:max-w-[75%]">
                     <div class="flex flex-col items-center py-20">
                         <div class="flex items-center space-x-4">
                             <AtomsIconButton icon="spaces" />
@@ -48,7 +47,7 @@ import { experiences } from '@/data/index';
                             </ul>
                         </div>
                         <div
-                            class="col-span-11 md:col-span-5 row-start-6  md:row-start-2 bg-white bg-custom-gradient card"
+                            class="col-span-11 md:col-span-5 row-start-6 md:row-start-2 bg-white bg-custom-gradient card"
                         >
                             <p class="text-zinc-500 font-light xl:text-lg">
                                 I love working on tough problems that bring value to teams and products. My passion for
@@ -70,15 +69,24 @@ import { experiences } from '@/data/index';
 
                     <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 md:grid-rows-1 gap-y-8 md:gap-5 pt-10">
                         <div class="col-span-2 bg-grey-grey10 card shadow-xl">
-                        <AtomsIconButton icon="briefcase" />
+                            <AtomsIconButton icon="briefcase" />
 
                             <h2 class="card__title">Past Experience</h2>
 
-                            <p class="pb-8 text-zinc-500 font-light ">A journey through code, creativity, and curiosity</p>
+                            <p class="pb-8 text-zinc-500 font-light">
+                                A journey through code, creativity, and curiosity
+                            </p>
 
                             <ul class="list-none text-sm space-y-2 text-zinc-500 font-light">
-                                <li v-for="{company, startDate, endDate, color} in experiences" class="flex items-center space-x-3 py-2">
-                                 <AtomsBullet :ping="!endDate" :color="color" />  <div class="flex flex-1 justify-between">  <span class="font-semibold">{{ company }}</span> <span>{{ endDate ? `${startDate} - ${endDate}` : "Current" }}</span> </div>
+                                <li
+                                    v-for="{ company, startDate, endDate, color } in experiences"
+                                    class="flex items-center space-x-3 py-2"
+                                >
+                                    <AtomsBullet :ping="!endDate" :color="color" />
+                                    <div class="flex flex-1 justify-between">
+                                        <span class="font-semibold">{{ company }}</span>
+                                        <span>{{ endDate ? `${startDate} - ${endDate}` : 'Current' }}</span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -89,33 +97,35 @@ import { experiences } from '@/data/index';
 
                             <p class="pb-4 text-zinc-500 font-light">Ready to collaborate or just want to say hello?</p>
 
-                            <div class="space-y-3">
-                                <a 
-                                    href="mailto:liberintwari@gmail.com" 
-                                    class="flex items-center space-x-3 p-3 rounded-xl hover:bg-grey-grey20 transition-colors"
+                            <div class="space-y-1">
+                                <a
+                                    href="mailto:liberintwari@gmail.com"
+                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors"
                                 >
                                     <AtomsIconButton icon="mail" />
-                                    <span class="text-zinc-600 font-medium">liberintwari@gmail.com</span>
+                                    <span class="text-zinc-600 font-medium text-sm sm:text-base truncate"
+                                        >liberintwari@gmail.com</span
+                                    >
                                 </a>
-                                
-                                <a 
-                                    href="https://github.com/claranceliberi" 
-                                    target="_blank" 
+
+                                <a
+                                    href="https://github.com/claranceliberi"
+                                    target="_blank"
                                     rel="noopener noreferrer"
-                                    class="flex items-center space-x-3 p-3 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors"
                                 >
                                     <AtomsIconButton icon="github" />
-                                    <span class="text-zinc-600 font-medium">GitHub</span>
+                                    <span class="text-zinc-600 font-medium text-sm sm:text-base">GitHub</span>
                                 </a>
-                                
-                                <a 
-                                    href="https://x.com/claranceliberi" 
-                                    target="_blank" 
+
+                                <a
+                                    href="https://x.com/claranceliberi"
+                                    target="_blank"
                                     rel="noopener noreferrer"
-                                    class="flex items-center space-x-3 p-3 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors"
                                 >
                                     <AtomsIconButton icon="x" />
-                                    <span class="text-zinc-600 font-medium">X (Twitter)</span>
+                                    <span class="text-zinc-600 font-medium text-sm sm:text-base">X (Twitter)</span>
                                 </a>
                             </div>
                         </div>
@@ -146,15 +156,13 @@ import { experiences } from '@/data/index';
 }
 
 .bg-custom-gradient {
-  background-image: linear-gradient(to top right, var(--grey-grey10), var(--grey-grey20));
+    background-image: linear-gradient(to top right, var(--grey-grey10), var(--grey-grey20));
 }
-.card{
+.card {
     @apply border-2 rounded-3xl p-6;
 
-    &__title{
+    &__title {
         @apply text-lg font-semibold text-zinc-700 py-4;
     }
 }
-
-
 </style>
