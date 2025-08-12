@@ -100,10 +100,10 @@ const age = computed(() => {
                             <div class="space-y-1">
                                 <a
                                     href="mailto:liberintwari@gmail.com"
-                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 hover:scale-105 hover:shadow-md transition-all duration-200 group"
                                 >
-                                    <AtomsIconButton icon="mail" />
-                                    <span class="text-zinc-600 font-medium text-sm sm:text-base truncate"
+                                    <AtomsIconButton icon="mail" size="sm" />
+                                    <span class="text-zinc-600 font-medium text-sm sm:text-base truncate group-hover:text-zinc-800"
                                         >liberintwari@gmail.com</span
                                     >
                                 </a>
@@ -112,20 +112,20 @@ const age = computed(() => {
                                     href="https://github.com/claranceliberi"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 hover:scale-105 hover:shadow-md transition-all duration-200 group"
                                 >
-                                    <AtomsIconButton icon="github" />
-                                    <span class="text-zinc-600 font-medium text-sm sm:text-base">GitHub</span>
+                                    <AtomsIconButton icon="github" size="sm" />
+                                    <span class="text-zinc-600 font-medium text-sm sm:text-base group-hover:text-zinc-800">GitHub</span>
                                 </a>
 
                                 <a
                                     href="https://x.com/claranceliberi"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors"
+                                    class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 hover:scale-105 hover:shadow-md transition-all duration-200 group"
                                 >
-                                    <AtomsIconButton icon="x" />
-                                    <span class="text-zinc-600 font-medium text-sm sm:text-base">X (Twitter)</span>
+                                    <AtomsIconButton icon="x" size="sm" />
+                                    <span class="text-zinc-600 font-medium text-sm sm:text-base group-hover:text-zinc-800">X (Twitter)</span>
                                 </a>
                             </div>
                         </div>
