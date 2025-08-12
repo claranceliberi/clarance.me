@@ -32,7 +32,7 @@ import { experiences, books } from '@/data/index';
                             <span class="kode-mono-font text-lg text-zinc-700">About me</span>
                         </div>
                         <p class="text-2xl font-medium max-w-120 mt-10 text-center text-zinc-700">
-                            A curious engineer, currently building the distributed cloud platform Africa doesn't have but desperately needs.
+                            A curious engineer, currently building the distributed affordable cloud platform Africa doesn't have but desperately needs.
                         </p>
                     </div>
 
