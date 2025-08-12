@@ -32,8 +32,7 @@ import { experiences, books } from '@/data/index';
                             <span class="kode-mono-font text-lg text-zinc-700">About me</span>
                         </div>
                         <p class="text-2xl font-medium max-w-120 mt-10 text-center text-zinc-700">
-                            I’m a curious engineer, crafting scalable solutions that elevate teams and deliver value to
-                            users.
+                            A curious engineer, currently building the distributed affordable cloud platform Africa doesn't have but desperately needs.
                         </p>
                     </div>
 
@@ -54,11 +53,11 @@ import { experiences, books } from '@/data/index';
                         <div
                             class="col-span-11 md:col-span-5 row-start-6  md:row-start-2 bg-white bg-custom-gradient card"
                         >
-                            <p class="text-zinc-500 font-light xl:text-lg">
-                                I love working on tough problems that bring value to teams and products. My passion for
-                                scalable, performant software drives my work, and my relentless curiosity and commitment
-                                set me apart. I'm always exploring new tools to enhance developer experience and elevate
-                                every project.
+                            <p class="text-zinc-500 font-light">
+                                I fix things that piss me off. Usually that's slow software, broken infrastructure, or problems everyone says "can't be solved."
+                                <br />
+Africa-based engineering teams are stuck choosing between expensive, unreliable national cloud providers (who promise 98% SLA - the lowest in the world - then don't even meet it) or dealing with terrible latency to US servers. People have just accepted this is how it is.
+I'm building <a class="underline" href="https://cloud.strettch.com" target="_blank" rel="noopener noreferrer">Strettch Cloud</a>, to fix it!
                             </p>
                         </div>
                         <div
