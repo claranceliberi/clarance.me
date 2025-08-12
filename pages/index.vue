@@ -53,10 +53,11 @@ import { experiences, books } from '@/data/index';
                         <div
                             class="col-span-11 md:col-span-5 row-start-6  md:row-start-2 bg-white bg-custom-gradient card"
                         >
-                            <p class="text-zinc-500 font-light xl:text-lg">
+                            <p class="text-zinc-500 font-light xl:text-md">
                                 I fix things that piss me off. Usually that's slow software, broken infrastructure, or problems everyone says "can't be solved."
+                                <br />
 Africa-based engineering teams are stuck choosing between expensive, unreliable national cloud providers (who promise 98% SLA - the lowest in the world - then don't even meet it) or dealing with terrible latency to US servers. People have just accepted this is how it is.
-I'm building <a href="https://cloud.strettch.com">strettch cloud</a>, to fix it.
+I'm building <a href="https://cloud.strettch.com" target="_blank" rel="noopener noreferrer">strettch cloud</a>, to fix it.
                             </p>
                         </div>
                         <div
