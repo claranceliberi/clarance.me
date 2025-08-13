@@ -9,19 +9,31 @@ const icons = {
     bike: 'i-tabler-bike',
     swimming: 'i-tabler-swimming',
     barbell: 'i-tabler-barbell',
+    mail: 'i-tabler-mail',
+    github: 'i-tabler-brand-github',
+    x: 'i-tabler-brand-x',
 }
 
 type IconProps = {
     icon: keyof typeof icons
+    size?: 'sm' | 'md' | 'lg'
 }
 
-const props = defineProps<IconProps>()
+const props = withDefaults(defineProps<IconProps>(), {
+    size: 'lg'
+})
+
+const sizeClasses = {
+    sm: 'text-lg p-1.5',
+    md: 'text-xl p-2',
+    lg: 'text-2xl p-2'
+}
 </script>
 <template>
     <div
-        class="border-[1.5px] border-grey-grey40 w-fit rounded-xl p-2 text-gray-400 shadow-xl shadow-grey-grey20 gradient-to-tr"
+        :class="`border-[1.5px] border-grey-grey40 w-fit rounded-xl text-gray-400 shadow-xl shadow-grey-grey20 gradient-to-tr ${sizeClasses[props.size]}`"
     >
-        <div :class="`text-2xl ${icons[$props.icon]}`"></div>
+        <div :class="`${icons[$props.icon]}`"></div>
     </div>
 </template>
 <style lang="scss">
