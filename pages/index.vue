@@ -97,15 +97,15 @@ I'm building <a class="underline" href="https://cloud.strettch.com" target="_bla
                             <p class="pb-4 text-zinc-500 font-light">Ready to collaborate or just want to say hello?</p>
 
                             <div class="space-y-1">
-                                <a
-                                    href="mailto:hey@claranceliberi.me"
+                                <!-- <a
+                                    href="mailto:hey@clarance.me"
                                     class="flex items-center space-x-3 px-3 py-2 rounded-xl hover:bg-grey-grey20 transition-colors duration-200 group"
                                 >
                                     <AtomsIconButton icon="mail" size="sm" />
                                     <span class="text-zinc-600 font-medium text-sm sm:text-base truncate group-hover:text-zinc-800"
-                                        >hey@claranceliberi.me</span
+                                        >hey@clarance.me</span
                                     >
-                                </a>
+                                </a> -->
 
                                 <a
                                     href="https://github.com/claranceliberi"

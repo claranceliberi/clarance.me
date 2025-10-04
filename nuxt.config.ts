@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   site: {
-    url: 'https://claranceliberi.me/',
+    url: 'https://clarance.me/',
     name: 'Clarance Liberi Ntwari',
     description: 'Welcome to my personal website. I am a software engineer.',
     defaultLocale: 'en',
