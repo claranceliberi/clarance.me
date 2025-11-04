@@ -1,6 +1,6 @@
 
 
-export type CompanyColors = 'GREY' | 'BLUE' | 'GREEN'
+export type CompanyColors = 'GREY' | 'BLUE' | 'GREEN' | 'PURPLE'
 export interface BlogInformation{
     title:string
     date:string

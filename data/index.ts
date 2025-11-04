@@ -18,14 +18,15 @@ export const books: Book[] = [
 
 export const experiences: Experience[] = [
   {
-    company: 'Strettch',
+    company: 'Strettch Cloud',
     startDate: 'Jan 2024',
-    color: 'GREEN'
+    color: 'PURPLE'
   },
   {
     company: 'Rwanda Social Security Board (RSSB)',
     startDate: 'Jan 2024',
-    color: 'BLUE'
+    endDate: 'July 2025',
+    color: 'GREY'
   },
   {
     company: 'PivotAccess Ltd.',
