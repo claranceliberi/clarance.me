@@ -18,6 +18,8 @@ import { computed } from '#imports';
         return 'bg-sky-300'
       case 'GREEN':
         return 'bg-emerald-300'
+      case 'PURPLE':
+        return 'bg-indigo-500'
       case 'GREY':
       default:
         return 'bg-gray-300'
@@ -30,6 +32,8 @@ import { computed } from '#imports';
         return 'border-2 border-sky-200 '
       case 'GREEN':
         return 'border-2 border-emerald-200 '
+      case 'PURPLE':
+        return 'border-2 border-indigo-400 '
       case 'GREY':
       default:
         return 'border-2 border-gray-200 '
