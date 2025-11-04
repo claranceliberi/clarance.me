@@ -26,7 +26,7 @@ export const experiences: Experience[] = [
     company: 'Rwanda Social Security Board (RSSB)',
     startDate: 'Jan 2024',
     endDate: 'July 2025',
-    color: 'BLUE'
+    color: 'GREY'
   },
   {
     company: 'PivotAccess Ltd.',
