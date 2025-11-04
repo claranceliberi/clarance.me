@@ -42,7 +42,7 @@ const age = computed(() => {
                             <ul class="list-disc ml-8 md:text-sm space-y-2 text-zinc-500 font-light">
                                 <li>{{ age }} years old</li>
                                 <li>Rwanda 🇷🇼</li>
-                                <li>Software Engineer</li>
+                                <li>Engineer</li>
                             </ul>
                         </div>
                         <div
