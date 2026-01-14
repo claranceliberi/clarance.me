@@ -27,7 +27,7 @@ const age = computed(() => {
                             <span class="kode-mono-font text-lg text-zinc-700">About me</span>
                         </div>
                         <p class="text-2xl font-medium max-w-120 mt-10 text-center text-zinc-700">
-                            A curious engineer, currently building the distributed affordable cloud platform Africa doesn't have but desperately needs.
+                            Currently building a cloud platform Africa doesn't have but desperately needs.
                         </p>
                     </div>
 
@@ -40,7 +40,8 @@ const age = computed(() => {
                             <h2 class="card__title">Clarance Liberi<span class="text-grey-grey30">ste</span> Ntwari</h2>
 
                             <ul class="list-disc ml-8 md:text-sm space-y-2 text-zinc-500 font-light">
-                                <li>{{ age }} years old</li>
+            
+                                <!-- <li>{{ age }} years old</li> -->
                                 <li>Rwanda 🇷🇼</li>
                                 <li>Engineer</li>
                             </ul>
@@ -49,9 +50,8 @@ const age = computed(() => {
                             class="col-span-11 md:col-span-5 row-start-6 md:row-start-2 bg-white bg-custom-gradient card"
                         >
                             <p class="text-zinc-500 font-light">
-                                I fix things that piss me off. Usually that's slow software, broken infrastructure, or problems everyone says "can't be solved."
-                                <br />
-Africa-based engineering teams are stuck choosing between expensive, unreliable national cloud providers (who promise 98% SLA - the lowest in the world - then don't even meet it) or dealing with terrible latency to US servers. People have just accepted this is how it is.
+                            
+Africa-based engineering teams are stuck choosing between expensive, unreliable local cloud providers (who promise 98% SLA - the lowest in the world - then don't even meet it) or dealing with terrible latency to US servers. People have just accepted this is how it is.
 I'm building <a class="underline" href="https://cloud.strettch.com" target="_blank" rel="noopener noreferrer">Strettch Cloud</a>, to fix it!
                             </p>
                         </div>
