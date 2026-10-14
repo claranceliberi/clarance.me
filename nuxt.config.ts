@@ -1,4 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { readdirSync } from 'node:fs'
+
+// No page links to the blog posts, so `nuxt generate` cannot find them by crawling.
+// List every content/blog/*.md so static builds include them.
+const blogRoutes = readdirSync(new URL('./content/blog', import.meta.url))
+  .filter((file) => file.endsWith('.md'))
+  .map((file) => `/blog/${file.replace(/\.md$/, '')}`)
+
 export default defineNuxtConfig({
   site: {
     url: 'https://clarance.me/',
@@ -45,6 +53,12 @@ export default defineNuxtConfig({
         "Noto Sans KR": '100..900'
       }
     },
+
+  nitro: {
+    prerender: {
+      routes: blogRoutes,
+    },
+  },
 
   compatibilityDate: '2024-08-31'
 })
