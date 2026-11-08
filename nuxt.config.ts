@@ -9,7 +9,7 @@ const blogRoutes = readdirSync(new URL('./content/blog', import.meta.url))
 
 export default defineNuxtConfig({
   site: {
-    url: 'https://clarance.me/',
+    url: 'https://www.clarance.me/',
     name: 'Clarance Liberi Ntwari',
     description: 'Welcome to my personal website. I am a software engineer.',
     defaultLocale: 'en',
