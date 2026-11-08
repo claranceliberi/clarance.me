@@ -56,6 +56,9 @@ export default defineNuxtConfig({
     },
 
   nitro: {
+    // Write .br and .gz next to each text asset so the static server can serve
+    // precompressed files (Caddy has no brotli encoder of its own).
+    compressPublicAssets: { brotli: true, gzip: true },
     prerender: {
       routes: blogRoutes,
     },
