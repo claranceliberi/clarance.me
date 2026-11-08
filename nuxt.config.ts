@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unocss/nuxt',
     "@nuxtjs/google-fonts",
-    "@nuxt/image",
     '@nuxtjs/seo',
     'nuxt-gtag'
   ],
