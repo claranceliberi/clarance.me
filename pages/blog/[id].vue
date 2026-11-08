@@ -32,11 +32,6 @@ useHead({
     ]
 })
 
-onMounted(() => {
-    console.log(data.value)
-    console.log(route.path)
-})
-
 </script>
 
 <style lang="scss" >
