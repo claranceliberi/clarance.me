@@ -32,10 +32,12 @@ useSeoMeta({
   twitterTitle: 'Clarance Liberi',
   twitterDescription: 'Welcome to my personal website. I am a software engineer. ',
   twitterImage: 'https://res.cloudinary.com/dawr8i20o/image/upload/c_scale,f_webp,w_910/v1725092932/claranceliberi.me/Liberi_profile_pic_2_-min_rxo6gw.webp',
-  twitterCard: ''
 })
 
 useHead({
+  // The card type was always left empty (no valid card). An empty entry here keeps
+  // @nuxtjs/seo from filling in summary_large_image; useSeoMeta's type rejects ''.
+  meta: [{ name: 'twitter:card', content: '' }],
   link: [
     {
       rel: 'icon',

@@ -80,6 +80,11 @@ export default defineNuxtConfig({
     prerender: {
       routes: blogRoutes,
     },
+    // Without an explicit list, TypeScript loads every @types/* package, and
+    // @types/parse-path (a stub pulled in by a dependency) has no types to load.
+    typescript: {
+      tsConfig: { compilerOptions: { types: ['node'] } },
+    },
   },
 
   compatibilityDate: '2024-08-31'

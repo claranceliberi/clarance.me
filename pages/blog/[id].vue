@@ -1,7 +1,7 @@
 <template>
 <NuxtLayout>
     <main class="flex justify-center">
-        <section class="max-w-xl">
+        <section v-if="data" class="max-w-xl">
             <header class="my-5 py-5 border-b-2">
                 <h2 class="text-4xl"> {{data.title}} </h2>
                 <p class="flex items-center mt-6 ">
@@ -21,11 +21,14 @@
 const route = useRoute()
 const { data } = await useAsyncData(`blog/${route.path}`, () => queryCollection('blog').path(route.path).first())
 
+if (!data.value) {
+    throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
+}
+
 useHead({
     title: data.value.title,
     meta:[
         {
-            hid: 'description',
             name: 'description',
             content: data.value.description,
           }
