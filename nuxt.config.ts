@@ -45,9 +45,10 @@ export default defineNuxtConfig({
     }
   },
   googleFonts: {
-      prefetch:true,
-      preconnect:true,
-      preload:true,
+      // Show fallback text while the fonts load. The site has no Korean text,
+      // so only the Latin slices are needed (Noto Sans KR ships ~120 Hangul ones).
+      display: 'swap',
+      subsets: ['latin', 'latin-ext'],
       families: {
         "Kode Mono": true,
         "Noto Sans KR": '100..900'
