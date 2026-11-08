@@ -39,6 +39,11 @@ export default defineNuxtConfig({
   aiReady: false,
   skewProtection: false,
   ogImage: false,
+  // nuxt-seo-utils (part of @nuxtjs/seo 6) minifies every inline <style> in prerendered
+  // HTML, including the Shiki highlight <style> that ContentRenderer puts in the post body.
+  // The client renders the unminified text from the payload, so Vue reports
+  // "Hydration completed but contains mismatches" on posts with code blocks.
+  seo: { minify: false },
   gtag: {
     enabled: process.env.NODE_ENV === 'production',
     id: 'G-JHWPXRB96E'
