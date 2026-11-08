@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
+  "minimumReleaseAge": "14 days",
+  "internalChecksFilter": "strict",
+  "packageRules": [
+    {
+      "description": "Nuxt core and its modules move together; one PR for all of them.",
+      "groupName": "nuxt",
+      "matchPackageNames": ["nuxt", "@nuxt/*", "@nuxtjs/*", "nuxt-*"]
+    },
+    {
+      "description": "Keep Docker images pinned by digest if a Dockerfile is ever added here.",
+      "matchDatasources": ["docker"],
+      "pinDigests": true
+    }
+  ]
+}

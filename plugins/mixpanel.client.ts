@@ -1,4 +1,6 @@
-import mixpanel from 'mixpanel-browser'
+// Core build without the bundled rrweb session recorder: session replay is off,
+// so the recorder only added weight to the entry chunk.
+import mixpanel from 'mixpanel-browser/dist/mixpanel-core.cjs.js'
 
 export default defineNuxtPlugin(() => {
   mixpanel.init('92b694410fc0c77b742d59416933ed81', {
@@ -6,8 +8,6 @@ export default defineNuxtPlugin(() => {
     debug: process.env.NODE_ENV !== 'production',
     track_pageview: true,
     persistence: 'localStorage',
-    record_sessions_percent: 100,
-    record_mask_text_selector: '',
   })
 
   mixpanel.identify(mixpanel.get_distinct_id())
