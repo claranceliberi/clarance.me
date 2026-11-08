@@ -24,9 +24,21 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     'nuxt-gtag'
   ],
+  // @nuxtjs/color-mode 4 changed the default class from 'dark-mode' to 'dark',
+  // which switches on the unfinished .dark theme. Keep the old class.
+  colorMode: {
+    classSuffix: '-mode',
+  },
   build: {
     transpile: ["shiki"],
   },
+  // @nuxtjs/seo 6 turns these on by default. Keep them off so the upgrade does not
+  // change what the site serves: no llms.txt / Markdown copies / AI Content-Signal
+  // in robots.txt, no skew-protection service worker, no generated OG images
+  // (the OG image is set explicitly in app.vue).
+  aiReady: false,
+  skewProtection: false,
+  ogImage: false,
   gtag: {
     enabled: process.env.NODE_ENV === 'production',
     id: 'G-JHWPXRB96E'
@@ -38,10 +50,17 @@ export default defineNuxtConfig({
   css:["@/assets/styles/index.scss"],
 
   content: {
-    highlight:{
-
-      theme:'vitesse-dark'
-    }
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'vitesse-dark',
+        },
+      },
+    },
+    // Node 22's built-in node:sqlite, so no native better-sqlite3 build is needed.
+    experimental: {
+      sqliteConnector: 'native',
+    },
   },
   googleFonts: {
       // Show fallback text while the fonts load. The site has no Korean text,

@@ -19,7 +19,7 @@
 <script setup lang="ts">
 
 const route = useRoute()
-const { data } = await useAsyncData(`blog/${route.path}`, () => queryContent(route.path).findOne())
+const { data } = await useAsyncData(`blog/${route.path}`, () => queryCollection('blog').path(route.path).first())
 
 useHead({
     title: data.value.title,
