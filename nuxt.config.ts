@@ -9,7 +9,7 @@ const blogRoutes = readdirSync(new URL('./content/blog', import.meta.url))
 
 export default defineNuxtConfig({
   site: {
-    url: 'https://clarance.me/',
+    url: 'https://www.clarance.me/',
     name: 'Clarance Liberi Ntwari',
     description: 'Welcome to my personal website. I am a software engineer.',
     defaultLocale: 'en',
@@ -21,13 +21,29 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unocss/nuxt',
     "@nuxtjs/google-fonts",
-    "@nuxt/image",
     '@nuxtjs/seo',
     'nuxt-gtag'
   ],
+  // @nuxtjs/color-mode 4 changed the default class from 'dark-mode' to 'dark',
+  // which switches on the unfinished .dark theme. Keep the old class.
+  colorMode: {
+    classSuffix: '-mode',
+  },
   build: {
     transpile: ["shiki"],
   },
+  // @nuxtjs/seo 6 turns these on by default. Keep them off so the upgrade does not
+  // change what the site serves: no llms.txt / Markdown copies / AI Content-Signal
+  // in robots.txt, no skew-protection service worker, no generated OG images
+  // (the OG image is set explicitly in app.vue).
+  aiReady: false,
+  skewProtection: false,
+  ogImage: false,
+  // nuxt-seo-utils (part of @nuxtjs/seo 6) minifies every inline <style> in prerendered
+  // HTML, including the Shiki highlight <style> that ContentRenderer puts in the post body.
+  // The client renders the unminified text from the payload, so Vue reports
+  // "Hydration completed but contains mismatches" on posts with code blocks.
+  seo: { minify: false },
   gtag: {
     enabled: process.env.NODE_ENV === 'production',
     id: 'G-JHWPXRB96E'
@@ -39,15 +55,23 @@ export default defineNuxtConfig({
   css:["@/assets/styles/index.scss"],
 
   content: {
-    highlight:{
-
-      theme:'vitesse-dark'
-    }
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'vitesse-dark',
+        },
+      },
+    },
+    // Node 22's built-in node:sqlite, so no native better-sqlite3 build is needed.
+    experimental: {
+      sqliteConnector: 'native',
+    },
   },
   googleFonts: {
-      prefetch:true,
-      preconnect:true,
-      preload:true,
+      // Show fallback text while the fonts load. The site has no Korean text,
+      // so only the Latin slices are needed (Noto Sans KR ships ~120 Hangul ones).
+      display: 'swap',
+      subsets: ['latin', 'latin-ext'],
       families: {
         "Kode Mono": true,
         "Noto Sans KR": '100..900'
@@ -55,8 +79,16 @@ export default defineNuxtConfig({
     },
 
   nitro: {
+    // Write .br and .gz next to each text asset so the static server can serve
+    // precompressed files (Caddy has no brotli encoder of its own).
+    compressPublicAssets: { brotli: true, gzip: true },
     prerender: {
       routes: blogRoutes,
+    },
+    // Without an explicit list, TypeScript loads every @types/* package, and
+    // @types/parse-path (a stub pulled in by a dependency) has no types to load.
+    typescript: {
+      tsConfig: { compilerOptions: { types: ['node'] } },
     },
   },
 

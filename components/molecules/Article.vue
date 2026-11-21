@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { BlogInformation } from '~~/types';
+import type { BlogInformation } from '~~/types';
 
 
 type blog = {
